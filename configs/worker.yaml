@@ -1,0 +1,34 @@
+ worker:
+  threads: 4
+  log_level: 'info'
+  queue_check_interval: 1  # 秒
+
+document_processing:
+  supported_formats:
+    - '.pdf'
+    - '.docx'
+    - '.doc'
+    - '.txt'
+    - '.html'
+    - '.xlsx'
+    - '.xls'
+    - '.pptx'
+    - '.ppt'
+    - '.md'
+  chunk_size: 1000
+  chunk_overlap: 200
+  storage:
+    path: '/app/data/uploads'
+    max_size_mb: 100
+
+embedding:
+  batch_size: 10
+  max_workers: 4
+  timeout: 60
+
+graphrag:
+  enabled: true
+  similarity_threshold: 0.75
+  max_neighbors: 5
+  max_hops: 2
+  update_interval: 3600  # 自动更新图结构的间隔（秒）

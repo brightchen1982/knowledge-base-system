@@ -1,0 +1,23 @@
+ qdrant:
+  host: 'qdrant'
+  port: 6333
+  grpc_port: 6334
+  prefer_grpc: true
+  timeout: 30
+
+collections:
+  default:
+    name: 'documents'
+    vector_size: 768
+    distance: 'Cosine'
+    optimizers:
+      deleted_threshold: 0.2
+      vacuum_min_vector_number: 1000
+    index:
+      m: 16
+      ef_construct: 100
+
+  metadata:
+    name: 'metadata'
+    vector_size: 768
+    distance: 'Cosine'

@@ -1,0 +1,21 @@
+ redis:
+  host: 'redis'
+  port: 6379
+  db: 0
+  password: 'redispassword'
+  timeout: 5
+  socket_timeout: 5
+  socket_connect_timeout: 5
+
+cache:
+  ttl: 3600  # 默认缓存1小时
+  search_ttl: 1800  # 搜索结果缓存30分钟
+  document_ttl: 86400  # 文档元数据缓存1天
+
+task_queue:
+  name: 'task_queue'
+  max_retries: 3
+  retry_delay: 60  # 秒
+
+sessions:
+  ttl: 86400  # 会话缓存1天
